@@ -49,7 +49,7 @@ app.get('/view', function(req, res){
 
 
 for find One thing and send name in body 
-// app.get('/view', function(req, res){
+// app.post('/view', function(req, res){
 //   user.findOne({name:req.body.name},=>(err, data){
 // 	    if(!err){
 // 	    console.log(data);
