@@ -39,7 +39,12 @@ app.post('/new', function(req, res){
 });
 
 app.get('/view', function(req, res){
-  user.find({});
+  user.find({},=>(err, data){
+	    if(!err){
+	    console.log(data);
+	    }
+	       
+	});
 });
 
 app.listen(3000,function () {
