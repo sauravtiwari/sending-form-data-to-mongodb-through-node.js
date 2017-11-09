@@ -20,8 +20,8 @@ mongoose.connect('mongodb://localhost/connection',function(err){
 });
 
 var Schema = new mongoose.Schema({
-	_id    : String,
-	name: String,
+	email    : String,
+	name     :String,
 	age   : Number
 });
 
@@ -29,7 +29,7 @@ var user = mongoose.model('emp', Schema);
 
 app.post('/new', function(req, res){
 	new user({
-		_id    : req.body.email,
+		email    : req.body.email,
 		name: req.body.name,
 		age   : req.body.age
 	}).save(function(err, doc){
@@ -58,6 +58,13 @@ for find One thing and send name in body
 // 	});
 // });
 
-app.listen(3000,function () {
-   console.log('server is running on port 3000');
+app.listen(3000,function (err) {
+	if(err){
+	    console.log(err)
+	   }else{
+            console.log('server is running on port 3000');	
+	   }
+	
+	   
+ 
 });
